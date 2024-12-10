@@ -1,0 +1,26 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1>Hello, .NET Core Website!</h1>
+    <p>This is a test to see if it's working.</p>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <h2>Database Records</h2>
+    <ul>
+        @if (Model.People != null && Model.People.Any())
+        {
+            foreach (var person in Model.People)
+            {
+                <li>@person.Name</li>
+            }
+        }
+        else
+        {
+            <li>No records found.</li>
+        }
+    </ul>
+</div>
